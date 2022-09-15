@@ -2,7 +2,6 @@ import { Component } from "react";
 
 export class ContactForm extends Component{
   state = {
-  contacts: [],
   name: '',
   number: '',
   }
@@ -11,11 +10,18 @@ export class ContactForm extends Component{
     const {name, value} = event.currentTarget
     this.setState({ [name]:value })
   }
-  
+
+  onContactAdd = event => {
+    event.preventDefault();
+    const { name, number } = this.state
+    this.props.onSubmit(name, number)
+    this.setState({ name: "", number: "" })
+  }
+
   render() {
     return (
     <div>
-      <form>
+      <form onSubmit={this.onContactAdd}>
         <label>
           Name
         <input
@@ -40,6 +46,7 @@ export class ContactForm extends Component{
           required
         />
           </label>
+          <button type="submit">Add contact</button>
       </form>
     </div>
     )
