@@ -2,7 +2,8 @@ import { nanoid } from 'nanoid'
 import { Component } from "react";
 import { ContactForm } from "components/ContactForm/ContactForm";
 import { Filter } from "components/Filter/Filter";
-import {ContactList} from "components/ContactList/ContactList"
+import { ContactList } from "components/ContactList/ContactList";
+import { Container, InnerContainer } from './App.styled';
 
 export class App extends Component  {
   state = {
@@ -56,14 +57,17 @@ export class App extends Component  {
     const filterContact = this.getFilteredList();
 
     return (
-<div>
-  <h1>Phonebook</h1>
-    <ContactForm onSubmit={this.addContact} />
-
-  <h2>Contacts</h2>
-    <Filter value={filter} onChange={this.onFilterSearch } />
-    <ContactList contacts={filterContact} onDeleteContact={this.deleteContact } />
-</div>
+      <Container>
+        <InnerContainer>
+          <h1>Phonebook</h1>
+          <ContactForm onSubmit={this.addContact} />
+        </InnerContainer>
+        <InnerContainer>
+          <h2>Contacts</h2>
+          <Filter value={filter} onChange={this.onFilterSearch } />
+          <ContactList contacts={filterContact} onDeleteContact={this.deleteContact} />
+        </InnerContainer>
+      </Container>
     )
   }
 };
