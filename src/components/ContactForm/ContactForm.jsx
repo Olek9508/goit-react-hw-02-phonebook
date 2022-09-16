@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { Component } from "react";
 import { BtnSubmit, Form, Label, Input } from "./ContactForm.styled";
 
@@ -6,6 +7,10 @@ export class ContactForm extends Component{
   name: '',
   number: '',
   }
+
+    static propTypes = {
+    onSubmit: PropTypes.func.isRequired,
+  };
 
   onSearchByInputValue = event => {
     const {name, value} = event.currentTarget

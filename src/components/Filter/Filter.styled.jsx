@@ -11,6 +11,7 @@ export const Label = styled.label`
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-left:45px;
     `
     ;
 

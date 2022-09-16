@@ -3,7 +3,7 @@ import { Component } from "react";
 import { ContactForm } from "components/ContactForm/ContactForm";
 import { Filter } from "components/Filter/Filter";
 import { ContactList } from "components/ContactList/ContactList";
-import { Container, InnerContainer } from './App.styled';
+import { Container, InnerContainer, Title } from './App.styled';
 
 export class App extends Component  {
   state = {
@@ -63,7 +63,7 @@ export class App extends Component  {
           <ContactForm onSubmit={this.addContact} />
         </InnerContainer>
         <InnerContainer>
-          <h2>Contacts</h2>
+          <Title>Contacts</Title>
           <Filter value={filter} onChange={this.onFilterSearch } />
           <ContactList contacts={filterContact} onDeleteContact={this.deleteContact} />
         </InnerContainer>

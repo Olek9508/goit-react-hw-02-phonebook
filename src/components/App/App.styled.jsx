@@ -7,7 +7,7 @@ export const Container = styled.div`
   text-align:center;
   flex-direction: column;
   width: 100%;
-  height:100vh;
+  height:100%;
   padding-left: 15px;
   padding-right: 15px;
   padding-top:50px;
@@ -20,6 +20,7 @@ export const Container = styled.div`
 
 export const InnerContainer = styled.div`
   width: 50%;
+  height:100%
   text-align:center;
   margin-bottom: 20px;
   background-color: #A52A2A;
@@ -29,4 +30,8 @@ export const InnerContainer = styled.div`
   rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 `;
 
-    
+
+export const Title = styled.h2`
+padding-left:45px;
+`
+  ;
