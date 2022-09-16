@@ -24,7 +24,7 @@ export class App extends Component  {
       number,
     }
 
-      if (contacts.find((contact) => contact.name === kontakt.name)) {
+      if (contacts.find((contact) => contact.name.toLocaleLowerCase() === kontakt.name.toLocaleLowerCase())) {
       alert(`${kontakt.name} is already in contacts.`);
       return;
     }
